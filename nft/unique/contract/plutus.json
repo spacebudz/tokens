@@ -1,0 +1,160 @@
+{
+  "preamble": {
+    "title": "nftunique/contract",
+    "description": "Aiken contracts for project 'nftunique/contract'",
+    "version": "0.0.0",
+    "plutusVersion": "v2",
+    "license": "Apache-2.0"
+  },
+  "validators": [
+    {
+      "title": "metadata_control.spend",
+      "datum": {
+        "title": "_datum",
+        "schema": {
+          "$ref": "#/definitions/metadata_control~1DatumMetadata"
+        }
+      },
+      "redeemer": {
+        "title": "_redeemer",
+        "schema": {
+          "$ref": "#/definitions/Void"
+        }
+      },
+      "compiledCode": "5903ef0100003232323232323232323232322223232323232533300d323232323253330163019002132323232323232323232323253330223025002132323232323232533302553330255333025004100314a0200429404004528299981219b8700933702900024004266e1c038cdc0a400090010a505333023323371e66002020900419800805a401044666e30004cdc09b8d00200100213371e01e0062940c94ccc08ccdc799800807a401091104000643b00013371e660020149004244104000de1400014a044666e31200000100253330213371e014006266e3c03c00c5281bae30260013026002375c60480022a6603e921334c6973742f5475706c652f436f6e73747220636f6e7461696e73206d6f7265206974656d73207468616e206578706563746564001637586046002602066464464002660040029101003001001222533302300214bd6f7b630099191919299981199b8f0050011003133028337606ea4004dd30011998038038018029bae302400337566048004604e006604a0046eaccc060c068cc060c06803d200248008dd6981080098108011bae301f001301f007375c603a00c6eb4c070004c070008dd7180d000980d0021bae301800315330134901334c6973742f5475706c652f436f6e73747220636f6e7461696e73206d6f7265206974656d73207468616e20657870656374656400163758602e002602e0046eb0c054004c008dd5998051806198051806003a4000900419919119191919000980c800980819299980999b8748000c048004400454cc0512412a4578706563746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e00163300437586601c60206601c6020006900024000466ebccc03cc04400520000023017001300e3253330113370e9001180800088008a998092492a4578706563746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e00163300c300e00148008c0040048894ccc0500085300103d87a8000132325333012300300213374a90001980b80125eb804ccc01401400400cc06000cc05800801852616233300400122233300500222253330133370e0049000080089980c1ba733018375200c660306ea400ccc060dd400125eb800040052f5c060020024444a666024006200226464646466600c002004666601001000600c00a6eb8c04c00cdd69809801180b002180a001980080091112999808001880089919191919980300080119998040040018030029bae301100337566022004602800860240066600200290001111199980399b8700100300d233330050053370000890011807800801001118031baa001230043754002ae695ce2ab9d5573caae7d5d02ba15745",
+      "hash": "d5774575dfba3134c293b978510481f0de1397c1458eac3b96339174"
+    },
+    {
+      "title": "minting_policy.mint",
+      "redeemer": {
+        "title": "action",
+        "schema": {
+          "$ref": "#/definitions/minting_policy~1Action"
+        }
+      },
+      "parameters": [
+        {
+          "title": "output_reference",
+          "schema": {
+            "$ref": "#/definitions/aiken~1transaction~1OutputReference"
+          }
+        }
+      ],
+      "compiledCode": "59030c01000032323232323232323232323232222325333009323232533300c3370e9000000899251300a32533300d3370e9000180600088008a99807a492a4578706563746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e00163332320013001001222533301400214c0103d87a8000132325333011300300213374a90001980b80125eb804ccc01401400400cc06000cc058008dd6198041805198041805002a40009000119baf33009300b001480000204ccc8c8004c0040048894ccc050008528899192999808980180109998028028008018a5030180033758602c004664646464466600800244466600a004444a66602e66e1c0092000100113301d374e6603a6ea4018cc074dd48019980e9ba80024bd70000800a5eb80c00400488894ccc05c00c40044c8c8c8c8ccc018004008cccc02002000c018014dd7180c0019bad3018002301b004301900330010012222533301500310011323232323330060010023333008008003006005375c602c0066eacc058008c064010c05c00cdd5998041805198041805002a40009004119191919299980899b8f00700413371000290000a51375a602e002602e002602c0046eb8c050004c02800cdd71808800980399299980519b8748000c024004400454cc0312412a4578706563746564206f6e20696e636f727265637420636f6e7374727563746f722076617269616e742e00163300530070024800852616330093253330093370e90000008a99980718038018a4c2a6601692011d4578706563746564206e6f206669656c647320666f7220436f6e7374720016153330093370e90010008a99980718038018a4c2a6601692011d4578706563746564206e6f206669656c647320666f7220436f6e7374720016153300b4912b436f6e73747220696e64657820646964206e6f74206d6174636820616e7920747970652076617269616e740016300700200233001001480008888cccc01ccdc38008018071199980280299b8000448008c0400040080088c01cdd5000918029baa0015734ae6d5ce2ab9d5573caae7d5d02ba15745",
+      "hash": "debf9c6760e34727e5d4994a07bebb86d1319617f69540bb406344ec"
+    }
+  ],
+  "definitions": {
+    "ByteArray": {
+      "dataType": "bytes"
+    },
+    "Data": {
+      "title": "Data",
+      "description": "Any Plutus data."
+    },
+    "Int": {
+      "dataType": "integer"
+    },
+    "Void": {
+      "title": "Unit",
+      "description": "The nullary constructor.",
+      "anyOf": [
+        {
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        }
+      ]
+    },
+    "aiken/dict/Dict$ByteArray_Data": {
+      "title": "Dict",
+      "description": "An opaque `Dict`. The type is opaque because the module maintains some\n invariant, namely: there's only one occurrence of a given key in the dictionary.\n\n Note that the `key` parameter is a phantom-type, and only present as a\n means of documentation. Keys can be any type, yet will need to comparable\n to use functions like `insert`.\n\n See for example:\n\n ```aiken\n pub type Value =\n   Dict<PolicyId, Dict<AssetName, Int>>\n ```",
+      "dataType": "map",
+      "keys": {
+        "$ref": "#/definitions/ByteArray"
+      },
+      "values": {
+        "$ref": "#/definitions/Data"
+      }
+    },
+    "aiken/transaction/OutputReference": {
+      "title": "OutputReference",
+      "description": "An `OutputReference` is a unique reference to an output on-chain. The `output_index`\n corresponds to the position in the output list of the transaction (identified by its id)\n that produced that output",
+      "anyOf": [
+        {
+          "title": "OutputReference",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "transaction_id",
+              "$ref": "#/definitions/aiken~1transaction~1TransactionId"
+            },
+            {
+              "title": "output_index",
+              "$ref": "#/definitions/Int"
+            }
+          ]
+        }
+      ]
+    },
+    "aiken/transaction/TransactionId": {
+      "title": "TransactionId",
+      "description": "A unique transaction identifier, as the hash of a transaction body. Note that the transaction id\n isn't a direct hash of the `Transaction` as visible on-chain. Rather, they correspond to hash\n digests of transaction body as they are serialized on the network.",
+      "anyOf": [
+        {
+          "title": "TransactionId",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "hash",
+              "$ref": "#/definitions/ByteArray"
+            }
+          ]
+        }
+      ]
+    },
+    "metadata_control/DatumMetadata": {
+      "title": "DatumMetadata",
+      "anyOf": [
+        {
+          "title": "DatumMetadata",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": [
+            {
+              "title": "metadata",
+              "$ref": "#/definitions/aiken~1dict~1Dict$ByteArray_Data"
+            },
+            {
+              "title": "version",
+              "$ref": "#/definitions/Int"
+            },
+            {
+              "title": "extra",
+              "$ref": "#/definitions/Data"
+            }
+          ]
+        }
+      ]
+    },
+    "minting_policy/Action": {
+      "title": "Action",
+      "anyOf": [
+        {
+          "title": "Minting",
+          "dataType": "constructor",
+          "index": 0,
+          "fields": []
+        },
+        {
+          "title": "Burning",
+          "dataType": "constructor",
+          "index": 1,
+          "fields": []
+        }
+      ]
+    }
+  }
+}

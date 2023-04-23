@@ -1,0 +1,14 @@
+name = "nftunique/contract"
+version = "0.0.0"
+license = "Apache-2.0"
+description = "Aiken contracts for project 'nftunique/contract'"
+
+[repository]
+user = "nftunique"
+project = "contract"
+platform = "github"
+
+[[dependencies]]
+name = "aiken-lang/stdlib"
+version = "74ae84be93367dc9fbbb6101137f9bf907385f42"
+source = "github"
