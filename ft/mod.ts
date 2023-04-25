@@ -210,6 +210,14 @@ export class Contract {
       .then((tx) => tx.submit());
   }
 
+  async getOwner(): Promise<Address> {
+    const ownershipUtxo = await this.lucid.utxoByUnit(
+      toUnit(this.ownershipPolicyId, fromText("Ownership") + this.assetName),
+    );
+
+    return ownershipUtxo.address;
+  }
+
   async changeMetadata(metadata: Metadata): Promise<TxHash> {
     if (!this.instanceId) {
       throw instanceMissingError;
