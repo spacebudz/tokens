@@ -13,7 +13,8 @@ A collection of token standards and minting methods. (WIP)
 
 - [Fungible token (FT)](./ft/)
 - [Non-fungible token (NFT) unique](./nft/unique/)
-- [Non-fungible token (NFT) series](./nft/series/) 
+- [Non-fungible token (NFT) series](./nft/series/)
+- [Non-fungible token (NFT) mass](./nft/mass/)
 
 ## TODO
 - Add more token standards/minting options
