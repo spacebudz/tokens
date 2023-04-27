@@ -89,3 +89,8 @@ const txHash = await contract.destroyLanes();
 
 const txHash = await contract.destroyPayment();
 ```
+
+## Limitations/Considerations
+
+- As mentioned aboved right now it works only for 10k collections. But this should be an easy fix.
+- Less lanes (the initial deployed UTxOs for parallelism) are available towards the end, because some of them will reach their max supply prior to others. Pseudo randomness ensures you cannot just pick any lane you want. Initially this is not an issue, but when less lanes are available and the mint demand is low then it's getting harder for someone to mint any still available NFT. As long as the demand is high this shouldn't be an issue.
