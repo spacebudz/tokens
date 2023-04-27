@@ -35,11 +35,39 @@ export const Address = Data.Object({
 });
 export type Address = Data.Static<typeof Address>;
 
+export const MerkleProof = Data.Array(Data.Enum([
+  Data.Object({
+    Left: Data.Tuple([Data.Bytes({ minLength: 32, maxLength: 32 })]),
+  }),
+  Data.Object({
+    Right: Data.Tuple([Data.Bytes({ minLength: 32, maxLength: 32 })]),
+  }),
+]));
+export type MerkleProof = Data.Static<typeof MerkleProof>;
+
 export const Action = Data.Enum([
   Data.Literal("Minting"),
+  Data.Literal("MintingExtra"),
   Data.Literal("Burning"),
 ]);
 export type Action = Data.Static<typeof Action>;
+
+export const ThreadPolicyAction = Data.Enum([
+  Data.Literal("Minting"),
+  Data.Literal("Burning"),
+]);
+export type ThreadPolicyAction = Data.Static<typeof ThreadPolicyAction>;
+
+export const ThreadAction = Data.Enum([
+  Data.Literal("_"),
+  Data.Object({
+    Spend: Data.Tuple([Data.Enum([
+      Data.Object({ Progress: Data.Tuple([OutputReference, MerkleProof]) }),
+      Data.Literal("Destroy"),
+    ])]),
+  }),
+]);
+export type ThreadAction = Data.Static<typeof ThreadAction>;
 
 export const Metadata222 = Data.Map(Data.Bytes(), Data.Any());
 export type Metadata222 = Data.Static<typeof Metadata222>;
@@ -51,23 +79,35 @@ export const DatumMetadata = Data.Object({
 });
 export type DatumMetadata = Data.Static<typeof DatumMetadata>;
 
-export const SpecificToken = Data.Object({
-  policyId: Data.Bytes({ minLength: 28, maxLength: 28 }),
-  assetName: Data.Bytes({ maxLength: 32 }),
+export const Payments = Data.Array(Data.Object({
+  address: Address,
+  amount: Data.Integer(),
+}));
+export type Payments = Data.Static<typeof Payments>;
+
+export const ThreadDatum = Data.Object({
+  base: Data.Integer(),
+  counter: Data.Integer(),
+  maxId: Data.Integer(),
+  merkleRoot: Data.Bytes({ minLength: 32, maxLength: 32 }),
+  seed: Data.Nullable(Data.Integer()),
 });
-export type SpecificToken = Data.Static<typeof SpecificToken>;
+export type ThreadDatum = Data.Static<typeof ThreadDatum>;
 
-export const MintingParams = Data.Tuple([
-  Data.Nullable(Data.Integer()),
-  Data.Bytes({ maxLength: 32 }),
-  SpecificToken,
-  SpecificToken,
+export const ThreadParams = Data.Tuple([
+  Data.Bytes({ minLength: 28, maxLength: 28 }),
   Address,
+  Data.Integer(),
 ]);
-export type MintingParams = Data.Static<typeof MintingParams>;
+export type ThreadParams = Data.Static<typeof ThreadParams>;
 
-export const SpecifcParams = Data.Tuple([OutputReference]);
-export type SpecifcParams = Data.Static<typeof SpecifcParams>;
+export const ThreadPolicyParams = Data.Tuple([OutputReference]);
+export type ThreadPolicyParams = Data.Static<typeof ThreadPolicyParams>;
+
+export const SeedPaymentParams = Data.Tuple([
+  Data.Bytes({ minLength: 28, maxLength: 28 }),
+]);
+export type SeedPaymentParams = Data.Static<typeof SeedPaymentParams>;
 
 type FileDetails = {
   name?: string;

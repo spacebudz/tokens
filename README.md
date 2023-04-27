@@ -7,7 +7,7 @@ A collection of token standards and minting methods. (WIP)
 ## Requirements
 
 - [Deno](https://deno.land/) $\ge$ Version 1.28.3
-- [Aiken](https://github.com/aiken-lang/aiken.git) (`cargo install --git https://github.com/aiken-lang/aiken.git --rev 9bb1a88f235f647832180abee1c33242b39ee15c`)
+- [Aiken](https://github.com/aiken-lang/aiken.git) (`cargo install --git https://github.com/aiken-lang/aiken.git --rev 8b11844282bd32d0693fddb896488bacfd06cdf1`)
 
 ## Collection
 

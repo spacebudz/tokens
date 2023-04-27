@@ -1,0 +1,15 @@
+{
+  "tasks": {
+    "build": "deno run -A build.ts",
+    "build:contract": "cd contract && aiken build",
+    "test": "deno test --allow-env --allow-read --allow-net tests",
+    "test:contract": "cd contract && aiken check",
+    "gen": "deno run -A gen.ts"
+  },
+  "lint": {
+    "files": {
+      "include": ["."],
+      "exclude": ["contract/"]
+    }
+  }
+}

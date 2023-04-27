@@ -1,0 +1,8 @@
+{
+  "name": "@spacebudz/minting",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Alessandro Konrad",
+  "description": "A contract for minting big NFT collection, written in Lucid and Aiken.",
+  "repository": "https://github.com/spacebudz/token"
+}
